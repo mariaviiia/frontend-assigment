@@ -7,23 +7,36 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 
 const StyledContainer = styled.div`
-    width: 30%;
+    width: 350px;
     height: fit-content;
     padding: 15px;
     border-radius: 10px;
     background-color: #fff;
 `;
 
-const NewsButton = styled.button`
+const NewsButton = styled.a`
     display: flex;
     background: none;
     border: none;
     align-items: center;
+    cursor: pointer;
+    &:hover, &:focus{
+        background-color: #f5f8fc;
+    }
 `;
 
 const StyledArticlePhoto = styled.img`
     height: 120px;
     width: 120px;
+`;
+
+const TitleImage = styled.span`
+    background-color: #3b80c2;
+    border-radius: 0px 10px 10px 0px;
+    color: #fff;
+    margin-top: 10px;
+    padding: 4px 20px;
+    position: absolute;
 `;
 
 const DataNewsContainer = styled.div`
@@ -36,7 +49,7 @@ const DataNewsContainer = styled.div`
 const DataNews = styled.div`
     display: block;
     padding: 2px;
-    width: 80%;
+    width: 180px;
     text-align: justify;
 `;
 
@@ -63,6 +76,10 @@ const Action = styled.button`
     border: none;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    &:hover, &:focus{
+        outline: 1px solid #3b80c2;
+    }
 `;
 
 const ActionLabel = styled.span`
@@ -74,21 +91,24 @@ const News = () => {
     return (
         <StyledContainer>
             <NewsButton>
-                <StyledArticlePhoto src={ArticlePhoto} alt="Noticia" />
+                <div>
+                    <TitleImage>Noticia</TitleImage>
+                    <StyledArticlePhoto src={ArticlePhoto} alt="Noticia" />
+                </div>
                 <DataNewsContainer>
                     <DataNews>
                         <StyledArticleData>{articleData.title}</StyledArticleData>
                         <Author>Por: Lorem ipsum Dolor</Author>
                         <ActionsContainer>
-                            <Action>
+                            <Action type='button'>
                                 <StarBorderIcon fontSize="small" htmlColor="#3b80c2" />
                                 <ActionLabel>50</ActionLabel>
                             </Action>
-                            <Action>
+                            <Action type='button'>
                                 <ChatBubbleOutlineIcon fontSize="small" htmlColor="#3b80c2" />
                                 <ActionLabel>40</ActionLabel>
                             </Action>
-                            <Action>
+                            <Action type='button'>
                                 <VisibilityOutlinedIcon fontSize="small" htmlColor="#8d8e90" />
                                 <ActionLabel>75</ActionLabel>
                             </Action>

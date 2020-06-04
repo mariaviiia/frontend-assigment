@@ -1,20 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-const Body = styled.body`
+const Body = createGlobalStyle`
+    body { 
     margin: 0px;
     font-family: 'monserrat', sans-serif;
     width: 100%;
     background-color: #edebeb;
+    }
 `;
 
 ReactDOM.render(
-    <Body>
         <React.StrictMode>
+            <Body />
             <App />
-        </React.StrictMode>
-    </Body>,
+        </React.StrictMode>,
     document.getElementById('root'),
 );

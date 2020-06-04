@@ -8,7 +8,7 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import CallMadeIcon from '@material-ui/icons/CallMade';
 
 const StyledContainer = styled.div`
-    width: 60%;
+    width: 950px;
     height: auto;
     padding: 20px;
     border-radius: 10px;
@@ -45,6 +45,11 @@ const SaveButton = styled.button`
     color: #fff;
     padding: 5px 10px;
     margin-left: 150px;
+    cursor: pointer;
+    &:hover, &:focus{
+        background-color: #5B9526;
+        outline: none;
+    }
 `;
 
 const StyledLogoNews = styled.img`
@@ -87,6 +92,10 @@ const Option = styled.button`
     color: #3b80c2;
     margin: 30px 0 0 30px;
     padding: 10px;
+    cursor: pointer;
+    &:hover, &:focus{
+        outline: 1px solid #3b80c2;
+    }
 `;
 
 const ActionsContainer = styled.div`
@@ -102,17 +111,22 @@ const ActionsCard = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    width: 60%;
+    width: 500px;
 `;
 
-const ActionContent = styled.button`
+const Action = styled.button`
     display: flex;
     align-items: center;
     background: none;
     border: none;
+    cursor: pointer;
+    &:hover, &:focus{
+        background-color: #f5f8fc;
+        outline: none;
+    }
 `;
 
-const Action = styled.span`
+const ActionLabel = styled.span`
     color: #8d8e90;
     margin-left: 5px;
 `;
@@ -124,7 +138,7 @@ const Article = () => {
             <StyledBanner src={Banner} alt="Noticia" />
             <Container>
                 <ArticleTitle>{articleData.title}</ArticleTitle>
-                <SaveButton>Guardar</SaveButton>
+                <SaveButton type='button'>Guardar</SaveButton>
                 <ReporterContainer>
                     <StyledLogoNews src={LogoNews} alt="Logo noticia" />
                     <ReporterDataContainer>
@@ -137,9 +151,9 @@ const Article = () => {
                     </ReporterDataContainer>
                 </ReporterContainer>
                 <OptionsContainer>
-                    <Option>Medicina interna</Option>
-                    <Option>Pediatría</Option>
-                    <Option>Obstreticia</Option>
+                    <Option type='button'>Medicina interna</Option>
+                    <Option type='button'>Pediatría</Option>
+                    <Option type='button'>Obstreticia</Option>
                 </OptionsContainer>
                 <div
                     dangerouslySetInnerHTML={{
@@ -148,18 +162,18 @@ const Article = () => {
                 ></div>
                 <ActionsContainer>
                     <ActionsCard>
-                        <ActionContent>
+                        <Action type='button'>
                             <StarBorderIcon fontSize="small" htmlColor="#3b80c2" />
-                            <Action>Destacar</Action>
-                        </ActionContent>
-                        <ActionContent>
+                            <ActionLabel>Destacar</ActionLabel>
+                        </Action>
+                        <Action type='button'>
                             <ChatBubbleOutlineIcon fontSize="small" htmlColor="#3b80c2" />
-                            <Action>Comentar</Action>
-                        </ActionContent>
-                        <ActionContent>
+                            <ActionLabel>Comentar</ActionLabel>
+                        </Action>
+                        <Action type='button'>
                             <CallMadeIcon fontSize="small" htmlColor="#3b80c2" />
-                            <Action>Compartir</Action>
-                        </ActionContent>
+                            <ActionLabel>Compartir</ActionLabel>
+                        </Action>
                     </ActionsCard>
                 </ActionsContainer>
             </Container>

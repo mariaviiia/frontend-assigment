@@ -11,10 +11,19 @@ const StyledFooter = styled.div`
     justify-content: space-around;
 `;
 
-const Action = styled.button`
+const StyledLogo = styled.img`
+    margin.left= 20px;
+`;
+
+const Action = styled.a`
     background: none;
     border: none;
     color: #fff;
+    cursor: pointer;
+    align-self: center;
+    &:hover, &:focus{
+        border-bottom: 1px solid #fff;
+    }
 `;
 
 const Copyright = styled.span`
@@ -25,7 +34,7 @@ const Copyright = styled.span`
 const Footer = () => {
     return (
         <StyledFooter>
-            <img src={Logo} alt="Logo" />
+            <StyledLogo src={Logo} alt="Logo" />
             <Action>Preguntas frecuentes</Action>
             <Action>Contáctanos</Action>
             <Action>Información</Action>

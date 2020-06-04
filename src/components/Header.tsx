@@ -10,18 +10,22 @@ import UserPhoto from '../assets/usuario-photo.jpg';
 
 const StyledHeader = styled.div`
     background-color: #3b80c2;
-    padding: 20px 0;
+    padding: 20px;
     width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+`;
+
+const StyledLogo = styled.img`
+    margin.left= 20px;
 `;
 
 const InputContainer = styled.div`
     display: flex;
     height: 35px;
-    width: 25%;
+    width: 400px;
+    margin-left: 70px;
 `;
 
 const IconContainer = styled.div`
@@ -40,6 +44,9 @@ const Input = styled.input`
     margin-left: 2px;
     width: 100%;
     padding-left: 10px;
+    &:hover, &:focus{
+        outline: 1px solid #3b80c2; 
+    }
 `;
 
 const HomeButton = styled.button`
@@ -47,6 +54,12 @@ const HomeButton = styled.button`
     background: none;
     border: none;
     display: flex;
+    margin-left: 50px;
+    cursor: pointer;
+    &:hover, &:focus{
+        background-color: #236EB5;
+        outline: none; 
+    }
 `;
 
 const ButtonContent = styled.span`
@@ -58,14 +71,21 @@ const ButtonContent = styled.span`
 const OptionsContainer = styled.div`
     border-left: 1px solid #fff;
     padding-left: 10px;
-    justify-self: end;
+    right: 20px;
+    position: absolute;
+    display:flex;
 `;
 
-const User = styled.button`
+const Action = styled.button`
     background: none;
     border: none;
     align-items: center;
     display: inline-flex;
+    cursor: pointer;
+    &:hover, &:focus{
+        background-color: #236EB5;
+        outline: none; 
+    }
 `;
 
 const StyledUserPhoto = styled.img`
@@ -77,25 +97,29 @@ const StyledUserPhoto = styled.img`
 const Header = () => {
     return (
         <StyledHeader>
-            <img src={Logo} alt="Logo" />
+            <StyledLogo src={Logo} alt="Logo" />
             <InputContainer>
                 <IconContainer>
                     <SearchIcon htmlColor="#78b045" />
                 </IconContainer>
                 <Input type="text" placeholder="¿Qué estas buscando?" />
             </InputContainer>
-            <HomeButton>
+            <HomeButton type='button'>
                 <HomeOutlinedIcon htmlColor="#fff" />
                 <ButtonContent>Inicio</ButtonContent>
                 <ExpandMoreOutlinedIcon htmlColor="#fff" />
             </HomeButton>
             <OptionsContainer>
-                <NotificationsNoneIcon fontSize="large" htmlColor="#fff" />
-                <User>
+                <Action type='button'>
+                    <NotificationsNoneIcon fontSize="large" htmlColor="#fff" />
+                </Action>
+                <Action type='button'>
                     <StyledUserPhoto src={UserPhoto} alt="Usuario" />
                     <ExpandMoreOutlinedIcon htmlColor="#fff" />
-                </User>
-                <SettingsOutlinedIcon fontSize="large" htmlColor="#fff" />
+                </Action>
+                <Action type='button'>
+                    <SettingsOutlinedIcon fontSize="large" htmlColor="#fff" /> 
+                </Action>
             </OptionsContainer>
         </StyledHeader>
     );
