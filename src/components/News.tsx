@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import ArticlePhoto from '../assets/article-photo.png';
-import articleData from '../assets/article.json';
+import articleData from '../../public/assets/article.json';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
+import Link from 'next/link';
 
 const StyledContainer = styled.div`
     width: 350px;
@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
     background-color: #fff;
 `;
 
-const NewsButton = styled.a`
+const NewsSection = styled.a`
     display: flex;
     background: none;
     border: none;
@@ -92,32 +92,34 @@ const ActionLabel = styled.span`
 const News: React.FC = () => {
     return (
         <StyledContainer>
-            <NewsButton>
-                <div>
-                    <TitleImage>Noticia</TitleImage>
-                    <StyledArticlePhoto src={ArticlePhoto} alt="Noticia" />
-                </div>
-                <DataNewsContainer>
-                    <DataNews>
-                        <StyledArticleData>{articleData.title}</StyledArticleData>
-                        <Author>Por: Lorem ipsum Dolor</Author>
-                        <ActionsContainer>
-                            <Action type="button">
-                                <StarBorderIcon fontSize="small" htmlColor="#3b80c2" />
-                                <ActionLabel>50</ActionLabel>
-                            </Action>
-                            <Action type="button">
-                                <ChatBubbleOutlineIcon fontSize="small" htmlColor="#3b80c2" />
-                                <ActionLabel>40</ActionLabel>
-                            </Action>
-                            <Action type="button">
-                                <VisibilityOutlinedIcon fontSize="small" htmlColor="#8d8e90" />
-                                <ActionLabel>75</ActionLabel>
-                            </Action>
-                        </ActionsContainer>
-                    </DataNews>
-                </DataNewsContainer>
-            </NewsButton>
+            <Link href="/">
+                <NewsSection>
+                    <div>
+                        <TitleImage>Noticia</TitleImage>
+                        <StyledArticlePhoto src="/article-photo.png" alt="Noticia" />
+                    </div>
+                    <DataNewsContainer>
+                        <DataNews>
+                            <StyledArticleData>{articleData.title}</StyledArticleData>
+                            <Author>Por: Lorem ipsum Dolor</Author>
+                            <ActionsContainer>
+                                <Action type="button">
+                                    <StarBorderIcon fontSize="small" htmlColor="#3b80c2" />
+                                    <ActionLabel>50</ActionLabel>
+                                </Action>
+                                <Action type="button">
+                                    <ChatBubbleOutlineIcon fontSize="small" htmlColor="#3b80c2" />
+                                    <ActionLabel>40</ActionLabel>
+                                </Action>
+                                <Action type="button">
+                                    <VisibilityOutlinedIcon fontSize="small" htmlColor="#8d8e90" />
+                                    <ActionLabel>75</ActionLabel>
+                                </Action>
+                            </ActionsContainer>
+                        </DataNews>
+                    </DataNewsContainer>
+                </NewsSection>
+            </Link>
         </StyledContainer>
     );
 };

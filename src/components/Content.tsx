@@ -14,10 +14,12 @@ const StyledContainer = styled.div`
 
 const Content: React.FC = () => {
     return (
-        <StyledContainer>
-            <Article />
-            <News />
-        </StyledContainer>
+        <>
+            <StyledContainer>
+                <Article />
+                <News />
+            </StyledContainer>
+        </>
     );
 };
 

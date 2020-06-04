@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
-import Banner from '../assets/Banner.jpg';
-import articleData from '../assets/article.json';
-import LogoNews from '../assets/logo-news.png';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import CallMadeIcon from '@material-ui/icons/CallMade';
@@ -135,15 +133,26 @@ const ActionLabel = styled.span`
 `;
 
 const Article: React.FC = () => {
+    const [article, setArticle] = useState({ title: '', content: '' });
+
+    const fetchData = async () => {
+        const { data } = await axios.get('/assets/article.json');
+        setArticle(data);
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return (
         <StyledContainer>
             <TitleImage>Noticia</TitleImage>
-            <StyledBanner src={Banner} alt="Noticia" />
+            <StyledBanner src="/banner.jpg" alt="Noticia" />
             <Container>
-                <ArticleTitle>{articleData.title}</ArticleTitle>
+                <ArticleTitle>{article.title}</ArticleTitle>
                 <SaveButton type="button">Guardar</SaveButton>
                 <ReporterContainer>
-                    <StyledLogoNews src={LogoNews} alt="Logo noticia" />
+                    <StyledLogoNews src="logo-news.png" alt="Logo noticia" />
                     <ReporterDataContainer>
                         <Reporter>Noticias DocRed</Reporter>
                         <div>
@@ -160,7 +169,7 @@ const Article: React.FC = () => {
                 </OptionsContainer>
                 <div
                     dangerouslySetInnerHTML={{
-                        __html: articleData.content,
+                        __html: article.content,
                     }}
                 ></div>
                 <ActionsContainer>

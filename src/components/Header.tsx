@@ -1,17 +1,14 @@
 import React from 'react';
-import Logo from '../assets/logo.png';
 import styled from 'styled-components';
 import SearchIcon from '@material-ui/icons/Search';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
-import UserPhoto from '../assets/usuario-photo.jpg';
 
 const StyledHeader = styled.div`
     background-color: #3b80c2;
     padding: 20px;
-    width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -100,7 +97,7 @@ const StyledUserPhoto = styled.img`
 const Header: React.FC = () => {
     return (
         <StyledHeader>
-            <StyledLogo src={Logo} alt="Logo" />
+            <StyledLogo src="/logo.png" alt="Logo" />
             <InputContainer>
                 <IconContainer>
                     <SearchIcon htmlColor="#78b045" />
@@ -117,7 +114,7 @@ const Header: React.FC = () => {
                     <NotificationsNoneIcon fontSize="large" htmlColor="#fff" />
                 </Action>
                 <Action type="button">
-                    <StyledUserPhoto src={UserPhoto} alt="Usuario" />
+                    <StyledUserPhoto src="/user-photo.jpg" alt="Usuario" />
                     <ExpandMoreOutlinedIcon htmlColor="#fff" />
                 </Action>
                 <Action type="button">

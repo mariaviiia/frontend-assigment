@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../assets/logo.png';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const StyledFooter = styled.div`
     background-color: #3b80c2;
@@ -35,10 +35,16 @@ const Copyright = styled.span`
 const Footer: React.FC = () => {
     return (
         <StyledFooter>
-            <StyledLogo src={Logo} alt="Logo" />
-            <Action>Preguntas frecuentes</Action>
-            <Action>Contáctanos</Action>
-            <Action>Información</Action>
+            <StyledLogo src="/logo.png" alt="Logo" />
+            <Link href="/">
+                <Action>Preguntas frecuentes</Action>
+            </Link>
+            <Link href="/">
+                <Action>Contáctanos</Action>
+            </Link>
+            <Link href="/">
+                <Action>Información</Action>
+            </Link>
             <Copyright>DocRed © 2019. Todos los derechos reservados</Copyright>
         </StyledFooter>
     );
