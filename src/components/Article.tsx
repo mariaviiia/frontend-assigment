@@ -46,8 +46,9 @@ const SaveButton = styled.button`
     padding: 5px 10px;
     margin-left: 150px;
     cursor: pointer;
-    &:hover, &:focus{
-        background-color: #5B9526;
+    &:hover,
+    &:focus {
+        background-color: #5b9526;
         outline: none;
     }
 `;
@@ -93,7 +94,8 @@ const Option = styled.button`
     margin: 30px 0 0 30px;
     padding: 10px;
     cursor: pointer;
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         outline: 1px solid #3b80c2;
     }
 `;
@@ -120,7 +122,8 @@ const Action = styled.button`
     background: none;
     border: none;
     cursor: pointer;
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         background-color: #f5f8fc;
         outline: none;
     }
@@ -131,14 +134,14 @@ const ActionLabel = styled.span`
     margin-left: 5px;
 `;
 
-const Article = () => {
+const Article: React.FC = () => {
     return (
         <StyledContainer>
             <TitleImage>Noticia</TitleImage>
             <StyledBanner src={Banner} alt="Noticia" />
             <Container>
                 <ArticleTitle>{articleData.title}</ArticleTitle>
-                <SaveButton type='button'>Guardar</SaveButton>
+                <SaveButton type="button">Guardar</SaveButton>
                 <ReporterContainer>
                     <StyledLogoNews src={LogoNews} alt="Logo noticia" />
                     <ReporterDataContainer>
@@ -151,9 +154,9 @@ const Article = () => {
                     </ReporterDataContainer>
                 </ReporterContainer>
                 <OptionsContainer>
-                    <Option type='button'>Medicina interna</Option>
-                    <Option type='button'>Pediatría</Option>
-                    <Option type='button'>Obstreticia</Option>
+                    <Option type="button">Medicina interna</Option>
+                    <Option type="button">Pediatría</Option>
+                    <Option type="button">Obstreticia</Option>
                 </OptionsContainer>
                 <div
                     dangerouslySetInnerHTML={{
@@ -162,15 +165,15 @@ const Article = () => {
                 ></div>
                 <ActionsContainer>
                     <ActionsCard>
-                        <Action type='button'>
+                        <Action type="button">
                             <StarBorderIcon fontSize="small" htmlColor="#3b80c2" />
                             <ActionLabel>Destacar</ActionLabel>
                         </Action>
-                        <Action type='button'>
+                        <Action type="button">
                             <ChatBubbleOutlineIcon fontSize="small" htmlColor="#3b80c2" />
                             <ActionLabel>Comentar</ActionLabel>
                         </Action>
-                        <Action type='button'>
+                        <Action type="button">
                             <CallMadeIcon fontSize="small" htmlColor="#3b80c2" />
                             <ActionLabel>Compartir</ActionLabel>
                         </Action>

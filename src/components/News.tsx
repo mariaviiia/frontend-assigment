@@ -20,7 +20,8 @@ const NewsButton = styled.a`
     border: none;
     align-items: center;
     cursor: pointer;
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         background-color: #f5f8fc;
     }
 `;
@@ -77,7 +78,8 @@ const Action = styled.button`
     display: flex;
     align-items: center;
     cursor: pointer;
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         outline: 1px solid #3b80c2;
     }
 `;
@@ -87,7 +89,7 @@ const ActionLabel = styled.span`
     color: #8d8e90;
 `;
 
-const News = () => {
+const News: React.FC = () => {
     return (
         <StyledContainer>
             <NewsButton>
@@ -100,15 +102,15 @@ const News = () => {
                         <StyledArticleData>{articleData.title}</StyledArticleData>
                         <Author>Por: Lorem ipsum Dolor</Author>
                         <ActionsContainer>
-                            <Action type='button'>
+                            <Action type="button">
                                 <StarBorderIcon fontSize="small" htmlColor="#3b80c2" />
                                 <ActionLabel>50</ActionLabel>
                             </Action>
-                            <Action type='button'>
+                            <Action type="button">
                                 <ChatBubbleOutlineIcon fontSize="small" htmlColor="#3b80c2" />
                                 <ActionLabel>40</ActionLabel>
                             </Action>
-                            <Action type='button'>
+                            <Action type="button">
                                 <VisibilityOutlinedIcon fontSize="small" htmlColor="#8d8e90" />
                                 <ActionLabel>75</ActionLabel>
                             </Action>

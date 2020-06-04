@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
     background-color: #edebeb;
 `;
 
-const Content = () => {
+const Content: React.FC = () => {
     return (
         <StyledContainer>
             <Article />

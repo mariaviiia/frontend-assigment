@@ -21,7 +21,8 @@ const Action = styled.a`
     color: #fff;
     cursor: pointer;
     align-self: center;
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         border-bottom: 1px solid #fff;
     }
 `;
@@ -31,7 +32,7 @@ const Copyright = styled.span`
     align-self: flex-end;
 `;
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <StyledFooter>
             <StyledLogo src={Logo} alt="Logo" />

@@ -13,9 +13,9 @@ const Body = createGlobalStyle`
 `;
 
 ReactDOM.render(
-        <React.StrictMode>
-            <Body />
-            <App />
-        </React.StrictMode>,
+    <React.StrictMode>
+        <Body />
+        <App />
+    </React.StrictMode>,
     document.getElementById('root'),
 );

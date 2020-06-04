@@ -44,8 +44,9 @@ const Input = styled.input`
     margin-left: 2px;
     width: 100%;
     padding-left: 10px;
-    &:hover, &:focus{
-        outline: 1px solid #3b80c2; 
+    &:hover,
+    &:focus {
+        outline: 1px solid #3b80c2;
     }
 `;
 
@@ -56,9 +57,10 @@ const HomeButton = styled.button`
     display: flex;
     margin-left: 50px;
     cursor: pointer;
-    &:hover, &:focus{
-        background-color: #236EB5;
-        outline: none; 
+    &:hover,
+    &:focus {
+        background-color: #236eb5;
+        outline: none;
     }
 `;
 
@@ -73,7 +75,7 @@ const OptionsContainer = styled.div`
     padding-left: 10px;
     right: 20px;
     position: absolute;
-    display:flex;
+    display: flex;
 `;
 
 const Action = styled.button`
@@ -82,9 +84,10 @@ const Action = styled.button`
     align-items: center;
     display: inline-flex;
     cursor: pointer;
-    &:hover, &:focus{
-        background-color: #236EB5;
-        outline: none; 
+    &:hover,
+    &:focus {
+        background-color: #236eb5;
+        outline: none;
     }
 `;
 
@@ -94,7 +97,7 @@ const StyledUserPhoto = styled.img`
     border: 2px solid #fff;
 `;
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <StyledHeader>
             <StyledLogo src={Logo} alt="Logo" />
@@ -104,21 +107,21 @@ const Header = () => {
                 </IconContainer>
                 <Input type="text" placeholder="¿Qué estas buscando?" />
             </InputContainer>
-            <HomeButton type='button'>
+            <HomeButton type="button">
                 <HomeOutlinedIcon htmlColor="#fff" />
                 <ButtonContent>Inicio</ButtonContent>
                 <ExpandMoreOutlinedIcon htmlColor="#fff" />
             </HomeButton>
             <OptionsContainer>
-                <Action type='button'>
+                <Action type="button">
                     <NotificationsNoneIcon fontSize="large" htmlColor="#fff" />
                 </Action>
-                <Action type='button'>
+                <Action type="button">
                     <StyledUserPhoto src={UserPhoto} alt="Usuario" />
                     <ExpandMoreOutlinedIcon htmlColor="#fff" />
                 </Action>
-                <Action type='button'>
-                    <SettingsOutlinedIcon fontSize="large" htmlColor="#fff" /> 
+                <Action type="button">
+                    <SettingsOutlinedIcon fontSize="large" htmlColor="#fff" />
                 </Action>
             </OptionsContainer>
         </StyledHeader>
