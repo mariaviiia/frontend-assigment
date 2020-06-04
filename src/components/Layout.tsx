@@ -18,8 +18,7 @@ const Layout: React.FC = () => {
     return (
         <>
             <Head>
-                <title>Create Next App</title>
-                <link rel="icon" href="/favicon.ico" />
+                <title>Front-end assigment</title>
                 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
             </Head>
             <Header />
