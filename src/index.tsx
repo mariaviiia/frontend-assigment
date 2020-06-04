@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import styled from 'styled-components';
+
+const Body = styled.body`
+    margin: 0px;
+    font-family: 'monserrat', sans-serif;
+    width: 100%;
+    background-color: #edebeb;
+`;
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
+    <Body>
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+    </Body>,
     document.getElementById('root'),
 );
